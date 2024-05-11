@@ -1,6 +1,17 @@
-// import { BiDollarCircle } from 'react-icons/bi';
-// import { FcBullish, FcBearish } from 'react-icons/fc';
+import { BiDollarCircle } from 'react-icons/bi';
+import { FcBullish, FcBearish } from 'react-icons/fc';
 
-export const ForbesListItem = () => {
-  return <h3>ForbesListItem</h3>;
+import style from './ForbesListItem.module.css';
+
+export const ForbesListItem = ({ isIncrease, capital, name, avatar }) => {
+  return (
+    <li className={style.item}>
+      <img className={style.avatar} src={avatar} alt={name} />
+      <h3 className={style.title}>{name}</h3>
+      <span className={style.capital}>
+        {capital} <BiDollarCircle color="#2196f3" size={22} />
+        {isIncrease ? <FcBullish /> : <FcBearish />}
+      </span>
+    </li>
+  );
 };

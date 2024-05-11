@@ -8,8 +8,8 @@ import {
   ForbesList,
 } from 'components';
 
-import stats from 'data/stats.json'
-
+import stats from 'data/stats.json';
+import forbs from 'data/forbes.json';
 import articles from './data/article.json';
 
 export const App = () => {
@@ -31,7 +31,7 @@ export const App = () => {
         <Statistics title="Main Statistics" stats={stats} />
 
         <Heading title="Task 3 Forbes list" top bottom />
-        <ForbesList />
+        <ForbesList list={forbs} />
 
         <Heading title="Task 4 Crypto history" top bottom />
         <CryptoHistory />
